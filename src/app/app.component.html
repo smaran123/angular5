@@ -10,7 +10,7 @@
 <input type="text" (keyup)="changeMe($event)">
 <p>Entered Text is {{movieName}}</p>
 <form>
-   OneWay Binding: <input tupe="text" [ngModel]="sportName" [ngModelOptions]="{standalone: true}"> {{sportName}}
+   TwoWay Binding: <input tupe="text" [(ngModel)]="sportName" [ngModelOptions]="{standalone: true}"> {{sportName}} <br/>
   <select (change)="display($event)"> 
     <option value="c1">category1</option>
     <option value="c2">category2</option>
