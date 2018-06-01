@@ -13,7 +13,7 @@ export class AppComponent {
   status: boolean;
   email: any;
 
-  product: Product;
+  products: Product[];
 
   ngOnInit() {
   	this.title = "Angular Practice";
@@ -22,11 +22,24 @@ export class AppComponent {
   	this.status = true;
   	this.email = "smaranreddy123@gmail.com"
 
-  	this.product = {
+  	this.products = [
+  	{
   	  id:  1,
   	  name:  "ball",
   	  price:  87,
   	  quantity:  43
-  	};
+  	},
+  	{
+  	  id:  2,
+  	  name:  "bat",
+  	  price:  344,
+  	  quantity:  39
+  	},
+  	{
+  	  id:  3,
+  	  name:  "wicket",
+  	  price:  74,
+  	  quantity:  3
+  	}]
   }
 }

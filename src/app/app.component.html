@@ -13,9 +13,17 @@
 <h2> {{ status }} </h2>
 <h2> {{ email }} </h2>
 
-<h2> Product Details </h2>
+<h2> Products Details </h2>
 
-<p>Id: {{product.id}}</p>
-<p>Name: {{product.name}}</p>
-<p>Price: {{product.price}}</p>
-<p>Quantity: {{product.quantity}}</p>
+<table class="table table centered">
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Price</td>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>{{product.id}}</td>
+    <td>{{ product.name}}</td>
+    <td>{{ product.price}}</td>
+  </tr>
+  </table>
