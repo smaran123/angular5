@@ -14,6 +14,7 @@ export class AppComponent {
   email: any;
   result: string = "";
   movieName: string = '';
+  state: string = '';
 
   products: Product[];
 
@@ -51,6 +52,10 @@ export class AppComponent {
 
   changeMe(event: any) {
     this.movieName = event.target.value;
+  }
+
+  display(event: any) {
+    this.state = event.target.value;
   }
 
 }

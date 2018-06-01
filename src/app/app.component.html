@@ -9,6 +9,15 @@
 <p>{{result}}</p>
 <input type="text" (keyup)="changeMe($event)">
 <p>Entered Text is {{movieName}}</p>
+<form>
+  <select (change)="display($event)">
+    <option value="c1">category1</option>
+    <option value="c2">category2</option>
+    <option value="c3">category3</option>
+    <option value="c4">category4</option>
+  </select>
+  selected category value is: {{state}}
+  </form>
 <h2> {{ age }} </h2>
 
 <h2> {{fullName}} </h2>
