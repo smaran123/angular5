@@ -12,6 +12,7 @@ export class AppComponent {
   fullName: string;
   status: boolean;
   email: any;
+  result: string = "";
 
   products: Product[];
 
@@ -42,4 +43,9 @@ export class AppComponent {
   	  quantity:  3
   	}]
   }
+
+  clickMe(){
+   this.result = "Hello World";
+  }
+  
 }
