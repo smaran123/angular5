@@ -7,7 +7,8 @@
 </div>
 <button (click)="clickMe()"> ChangeText</button>
 <p>{{result}}</p>
-
+<input type="text" (keyup)="changeMe($event)">
+<p>Entered Text is {{movieName}}</p>
 <h2> {{ age }} </h2>
 
 <h2> {{fullName}} </h2>

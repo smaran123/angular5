@@ -13,6 +13,7 @@ export class AppComponent {
   status: boolean;
   email: any;
   result: string = "";
+  movieName: string = '';
 
   products: Product[];
 
@@ -47,5 +48,9 @@ export class AppComponent {
   clickMe(){
    this.result = "Hello World";
   }
-  
+
+  changeMe(event: any) {
+    this.movieName = event.target.value;
+  }
+
 }
