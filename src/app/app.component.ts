@@ -15,6 +15,7 @@ export class AppComponent {
   result: string = "";
   movieName: string = '';
   state: string = '';
+  sportName: string;
 
   products: Product[];
 
@@ -24,6 +25,7 @@ export class AppComponent {
   	this.fullName = "rajesh";
   	this.status = true;
   	this.email = "smaranreddy123@gmail.com"
+  	this.sportName = "Hockey";
 
   	this.products = [
   	{

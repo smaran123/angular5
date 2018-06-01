@@ -10,7 +10,8 @@
 <input type="text" (keyup)="changeMe($event)">
 <p>Entered Text is {{movieName}}</p>
 <form>
-  <select (change)="display($event)">
+   OneWay Binding: <input tupe="text" [ngModel]="sportName" [ngModelOptions]="{standalone: true}"> {{sportName}}
+  <select (change)="display($event)"> 
     <option value="c1">category1</option>
     <option value="c2">category2</option>
     <option value="c3">category3</option>
@@ -39,3 +40,4 @@
     <td>{{ product.price}}</td>
   </tr>
   </table>
+
