@@ -49,3 +49,79 @@
   </tr>
   </table>
 
+<h3>Register Form </h3>
+
+<form [formGroup]="registerForm" (ngSubmit)="save()">
+  <table>
+    <tr>
+      <td>UserName</td>
+      <td>
+        <input type="text" formControlName="userName">
+      </td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>
+        <input type="password" formControlName="password">
+      </td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>
+        <textarea cols="20" rows="5" formControlName="description"></textarea> 
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">Gender</td>
+      <td>
+        <div *ngFor="let gender of genders">
+          <input type="radio" formControlName="gender" value="{{ gender.value}}">{{ gender.display}}
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">Status</td>
+      <td>
+        <input type="checkbox" formControlName="status" >
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">Languages</td>
+      <td>
+        <div *ngFor="let language of languages">
+          <input type="checkbox" formControlName="languages" value="{{ language.id}}"
+          (change)="onCheckboxChange(language,$event)">
+          {{ language.name }}
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">Role</td>
+      <td>
+        <select formControlName="role">
+          <option *ngFor="let role of roles" value="{{role.id}}">
+            {{role.name}}
+          </option>
+        </select>
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top">Certificates</td>
+      <td>
+        <select formControlName="certificates" multiple="multiple">
+          <option *ngFor="let certificate of certificates" value="{{certificate.value}}" >
+          {{ certificate.display }}
+        </option>
+      </select>
+      </td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+        <input type="submit" value="save"> 
+      </td>
+    </tr>
+  </table>
+</form>
