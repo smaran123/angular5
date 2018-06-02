@@ -19,6 +19,8 @@ export class AppComponent {
 
   products: Product[];
 
+  fileResult: string = '';
+
   ngOnInit() {
   	this.title = "Angular Practice";
   	this.age = 21;
@@ -58,6 +60,14 @@ export class AppComponent {
 
   display(event: any) {
     this.state = event.target.value;
+  }
+
+  changeFileResult(event: any) {
+  console.log(event)
+  var selectedFile = event.target.files[0];
+    this.fileResult = 'File Name:' + selectedFile.name;
+    this.fileResult += '<br>file size(byte): ' + selectedFile.size;
+    this.fileResult += '<br>File Type: ' + selectedFile.type;
   }
 
 }

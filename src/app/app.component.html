@@ -5,6 +5,9 @@
   </h1>
   
 </div>
+<h2>FileResult</h2>
+<input type="file" placeholder="Enter File" (change)="changeFileResult($event)">
+<span [innerHTML]="fileResult"></span><br/>
 <button (click)="clickMe()"> ChangeText</button>
 <p>{{result}}</p>
 <input type="text" (keyup)="changeMe($event)">
