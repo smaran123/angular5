@@ -20,6 +20,7 @@ export class AppComponent {
   products: Product[];
 
   fileResult: string = '';
+  filesResult: string = '';
 
   ngOnInit() {
   	this.title = "Angular Practice";
@@ -68,6 +69,17 @@ export class AppComponent {
     this.fileResult = 'File Name:' + selectedFile.name;
     this.fileResult += '<br>file size(byte): ' + selectedFile.size;
     this.fileResult += '<br>File Type: ' + selectedFile.type;
+  }
+
+  changeFilesResult(event: any) {
+   console.log(event);
+   var selectedFiles = event.target.files;
+   for (var i = 0; i < selectedFiles.length; i++ ) {
+     this.filesResult +=  'FileName: ' + selectedFiles[i].name;
+     this.filesResult += '<br>File Size(byte): ' + selectedFiles[i].size;
+     this.filesResult += '<br>File Type: ' + selectedFiles[i].type;
+   }
+   
   }
 
 }

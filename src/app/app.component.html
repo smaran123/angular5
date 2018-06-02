@@ -8,6 +8,11 @@
 <h2>FileResult</h2>
 <input type="file" placeholder="Enter File" (change)="changeFileResult($event)">
 <span [innerHTML]="fileResult"></span><br/>
+<h2>Files Result</h2>
+<input type="file" placeholder="Enter files" (change)="changeFilesResult($event)" multiple="multiple">
+<span [innerHTML]="filesResult"></span>
+<br/>
+<br/>
 <button (click)="clickMe()"> ChangeText</button>
 <p>{{result}}</p>
 <input type="text" (keyup)="changeMe($event)">
