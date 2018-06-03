@@ -105,6 +105,22 @@
       </td>
     </tr>
     <tr>
+      <td>Age</td>
+      <td>
+        <input type="number" formControlName="age">
+      </td>
+      <td>
+        <div *ngIf="registerForm.get('age').touched">
+         <div *ngIf="registerForm.hasError('min', ['age'])">
+              please enter a value greater then or equal to 18
+          </div>
+           <div *ngIf="registerForm.hasError('max', ['age'])">
+              please enter a value that is less than or equal to 100
+           </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
       <td>Description</td>
       <td>
         <textarea cols="20" rows="5" formControlName="description"></textarea> 
