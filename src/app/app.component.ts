@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Product } from './entites/product.entity';
 import { Account } from './entites/account.entity';
 
@@ -66,8 +66,9 @@ export class AppComponent {
     ];
 
     this.registerForm = this.formBuilder.group({
-      userName: '',
-      password: '',
+      userName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(8)]],
+      password: ['', [Validators.required, Validators.pattern('^((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z)(?=.*[@#$%]).{6,20})$')]],
+      email: ['', [Validators.required, Validators.pattern(/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/)]],
       description: '',
       status: true,
       gender: this.genders[0].value,

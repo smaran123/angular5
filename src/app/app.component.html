@@ -58,11 +58,50 @@
       <td>
         <input type="text" formControlName="userName">
       </td>
+      <td>
+        <div *ngIf="registerForm.get('userName').touched">
+          <div *ngIf="registerForm.hasError('required', ['userName'])">
+              This Field is required
+            </div>
+             <div *ngIf="registerForm.hasError('minlength', ['userName'])">
+              Please enter atleast 3 characters
+            </div>
+             <div *ngIf="registerForm.hasError('maxlength', ['userName'])">
+              please enter no more than 8 characters
+            </div>
+          </div>
+      </td>
     </tr>
     <tr>
       <td>Password</td>
       <td>
         <input type="password" formControlName="password">
+      </td>
+      <td>
+        <div *ngIf="registerForm.get('password').touched">
+          <div *ngIf="registerForm.hasError('required', ['password'])">
+              This Field is required
+          </div>
+          <div *ngIf="registerForm.hasError('pattern', ['password'])">
+              password doesn't meet complexity requirements
+           </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td>
+        <input type="text" formControlName="email">
+      </td>
+      <td>
+        <div *ngIf="registerForm.get('email').touched">
+         <div *ngIf="registerForm.hasError('required', ['email'])">
+              This Field is required
+          </div>
+           <div *ngIf="registerForm.hasError('pattern', ['email'])">
+              email doesn't meet complexity requirements
+           </div>
+        </div>
       </td>
     </tr>
     <tr>
