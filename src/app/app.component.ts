@@ -4,6 +4,7 @@ import { ProductService } from './services/product.service';
 import { Product } from './entites/product.entity';
 import { Account } from './entites/account.entity';
 import { MathService } from "./services/math.service";
+import { CalculatorService } from './services/calculator.service';
 import { max } from './validators/max.validator';
 import { min } from './validators/min.validator';
 
@@ -14,6 +15,9 @@ import { min } from './validators/min.validator';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+ calcRes1: number;
+ calcRes2: number;
+
   title = 'app';
   age: number;
   fullName: string;
@@ -43,6 +47,8 @@ export class AppComponent {
   result3: number;
 
   ngOnInit() {
+    this.calcRes1 = this.calculatorService.square(2);
+    this.calcRes2 = this.calculatorService.cube(3);
     this.result1 = this.mathService.addition(10,20);
     this.result2 = this.mathService.subtraction(20,23);
     this.result3 = this.mathService.multiply(3,2);
@@ -111,7 +117,7 @@ export class AppComponent {
   	  name:  "wicket",
   	  price:  74,
   	  quantity:  3
-  	}]
+  	}];
   }
 
   clickMe(){
@@ -147,7 +153,8 @@ export class AppComponent {
 
   constructor(private formBuilder: FormBuilder,
               private mathService: MathService,
-              private productService: ProductService,) {
+              private productService: ProductService,
+              private calculatorService: CalculatorService) {
 
   }
 
