@@ -191,3 +191,46 @@
     </tr>
   </table>
 </form>
+================================
+<h2>Product Info</h2>
+<table border="1">
+  <tr>
+    <td>Id</td>
+    <td>{{product.id}}</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>{{product.name}}</td>
+  </tr>
+  <tr>
+    <td>Photo</td>
+    <td>{{product.photo}}</td>
+  </tr>
+  <tr>
+    <td>Price</td>
+    <td>{{product.price}}</td>
+  </tr>
+  <tr>
+    <td>Quantity</td>
+    <td>{{product.quantity}}</td>
+  </tr>
+</table>
+
+<h2>Products List</h2>
+<table border="1">
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Photo</td>
+    <td>Price</td>
+    <td>Quantity</td>
+  </tr>
+  <tr *ngFor="let p of products">
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.photo}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.quantity}}</td>
+  </tr>
+  
+</table>

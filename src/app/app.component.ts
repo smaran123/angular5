@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProductService } from './services/product.service';
 import { Product } from './entites/product.entity';
 import { Account } from './entites/account.entity';
 import { MathService } from "./services/math.service";
@@ -23,6 +24,8 @@ export class AppComponent {
   state: string = '';
   sportName: string;
 
+  product: Product;
+
   products: Product[];
 
   fileResult: string = '';
@@ -43,7 +46,8 @@ export class AppComponent {
     this.result1 = this.mathService.addition(10,20);
     this.result2 = this.mathService.subtraction(20,23);
     this.result3 = this.mathService.multiply(3,2);
-
+    this.product = this.productService.find();
+    this.products = this.productService.findAll();
   	this.title = "Angular Practice";
   	this.age = 21;
   	this.fullName = "rajesh";
@@ -142,7 +146,8 @@ export class AppComponent {
   }
 
   constructor(private formBuilder: FormBuilder,
-              private mathService: MathService) {
+              private mathService: MathService,
+              private productService: ProductService,) {
 
   }
 
