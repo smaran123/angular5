@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Product } from './entites/product.entity';
 import { Account } from './entites/account.entity';
+import { MathService } from "./services/math.service";
 import { max } from './validators/max.validator';
 import { min } from './validators/min.validator';
 
@@ -34,8 +35,15 @@ export class AppComponent {
   checkedList: string[];
   certificates: any;
 
+  result1: number;
+  result2: number;
+  result3: number;
 
   ngOnInit() {
+    this.result1 = this.mathService.addition(10,20);
+    this.result2 = this.mathService.subtraction(20,23);
+    this.result3 = this.mathService.multiply(3,2);
+
   	this.title = "Angular Practice";
   	this.age = 21;
   	this.fullName = "rajesh";
@@ -133,7 +141,8 @@ export class AppComponent {
    
   }
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+              private mathService: MathService) {
 
   }
 

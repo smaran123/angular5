@@ -1,9 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
+<div class="row">
+<div id="small-img">
+  <img src="/assets/open-uri.jpg" class="img-responsive"/>
+  <img src="/assets/open-uri2.jpg" class="img-responsive" alt="Logo">
+</div>
+</div>
+
+
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}
   </h1>
-  
+  <h2>Addition:{{ result1 }}</h2>
+  <h2>Substraction:{{ result2 }}</h2>
+  <h2>Multiplication:{{ result3 }}</h2>
 </div>
 <h2>FileResult</h2>
 <input type="file" placeholder="Enter File" (change)="changeFileResult($event)">

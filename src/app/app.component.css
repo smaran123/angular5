@@ -1,0 +1,9 @@
+.row img {
+  border: 0 none;
+  display: inline;
+  align: center;
+  margin: 10px;
+  height: auto;
+  max-width: 30%;
+  vertical-align: middle;
+}

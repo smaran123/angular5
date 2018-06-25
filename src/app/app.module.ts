@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MathService } from './services/math.service';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -12,7 +13,7 @@ import { AppComponent } from './app.component';
     FormsModule, 
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [MathService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
